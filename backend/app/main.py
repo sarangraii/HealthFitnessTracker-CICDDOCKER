@@ -27,7 +27,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:3001",
-        "https://health-fitness-tracker-frontend.vercel.app",  # Production
+        "https://health-fitness-tracker-frontend.vercel.app",
+        "https://health-fitness-tracker-cicddocker.vercel.app",
     ],
     allow_origin_regex=r"https://health-fitness-tracker-main-.*\.vercel\.app",  # All previews
     allow_credentials=True,
@@ -61,6 +62,6 @@ async def root():
         "docs": "/docs"
     }
 
-@app.get("/health")
+@app.get("/health") 
 async def health_check():
     return {"status": "healthy"}
